@@ -26,7 +26,4 @@ function getRandomValues (array) {
   return array
 }
 
-module.exports = {
-  getRandomValues,
-  default: getRandomValues
-}
+module.exports = getRandomValues
