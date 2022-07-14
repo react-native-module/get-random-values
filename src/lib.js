@@ -7,7 +7,9 @@ function getRandomBase64 (byteLength) {
   const isRunningOnReactNative = globalThis.navigator && globalThis.navigator.product && globalThis.navigator.product === 'ReactNative'
   if (!isRunningOnReactNative) {
     const crypto = require('crypto')
-    if (crypto.randomBytes) {
+    if (crypto.webcrypto && crypto.webcrypto.getRandomValues) {
+      return Buffer.from(crypto.webcrypto.getRandomValues(new Uint8Array(byteLength))).toString('base64')
+    } else if (crypto.randomBytes) {
       return crypto.randomBytes(byteLength).toString('base64')
     }
   }
