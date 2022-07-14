@@ -26,8 +26,6 @@ function getRandomValues (array) {
   return array
 }
 
-console.log('getRandomValues', getRandomValues)
-
 module.exports = {
   getRandomValues,
   default: getRandomValues
