@@ -1,40 +1,34 @@
-# `crypto.getRandomValues` for React Native
+# react-native-module/get-random-values
 
-A small implementation of `crypto.getRandomValues` for React Native. This is useful to polyfill for libraries like [uuid](https://www.npmjs.com/package/uuid) that depend on it.
+This module export a function `getRandomValues` only
+with same API `crypto.getRandomValues`
+
+# Why use this module not `react-native-get-random-values`
+
+`react-native-get-random-values` is pollifill package,
+but, this module add anything on global scope
 
 ## Installation
 
-```sh
-npm install react-native-get-random-values
-npx pod-install
+A typical workflow:
+
+```
+npm i --save @react-native-module/get-random-values
 ```
 
-> 💡 If you use the Expo managed workflow you will see "CocoaPods is not supported in this project" - this is fine, it's not necessary.
+```
+yarn add @react-native-module/get-random-values
+```
 
 ## Usage
 
-This library works as a polyfill for the global `crypto.getRandomValues`.
+```js
+import { getRandomValues } from "@react-native-module/get-random-values";
 
-```javascript
-// Add this line to your `index.js`
-import 'react-native-get-random-values'
+const randomValues = getRandomValues(new Uint8Array(4));
 ```
 
-Now you can use `uuid` or other libraries that assume `crypto.getRandomValues` is available.
-
-```javascript
-import { v4 as uuid } from 'uuid'
-
-console.log(uuid())
-```
-
-## API
-
-### `crypto.getRandomValues(typedArray)`
-
-The `crypto.getRandomValues()` method lets you get cryptographically strong random values. The array given as the parameter is filled with random numbers (random in its cryptographic meaning).
-
-To guarantee enough performance, implementations are not using a truly random number generator, but they are using a pseudo-random number generator *seeded* with a value with enough entropy. The PRNG used differs from one implementation to the other but is suitable for cryptographic usages. Implementations are also required to use a seed with enough entropy, like a system-level entropy source.
+### `getRandomValues(typedArray)`
 
 - `typedArray` - Is an integer-based TypedArray, that is an `Int8Array`, a `Uint8Array`, an `Int16Array`, a `Uint16Array`, an `Int32Array`, or a `Uint32Array`. All elements in the array are going to be overridden with random numbers.
 
