@@ -1,8 +1,7 @@
+import { QuotaExceededError, TypeMismatchError } from './src/errors'
+
 const base64Decode = require('fast-base64-decode')
 const { NativeModules } = require('react-native')
-
-class TypeMismatchError extends Error {}
-class QuotaExceededError extends Error {}
 
 let warned = false
 function insecureRandomValues (array) {
