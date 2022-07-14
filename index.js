@@ -1,4 +1,4 @@
-const getRandomValues = (array) => {
+function getRandomValues (array) {
   // If you're running react-native debug mode (Chrome debug)
   // calling request is replaced globalThis.crypto.getRandomValues
   // If you ignore this, you may get error on getRandomBase64
@@ -25,7 +25,9 @@ const getRandomValues = (array) => {
   return array
 }
 
-exports = {
+console.log('getRandomValues', getRandomValues)
+
+module.exports = {
   getRandomValues,
   default: getRandomValues
 }

@@ -18,6 +18,6 @@ function getRandomBase64 (byteLength) {
   }
 }
 
-exports = {
+module.exports = {
   getRandomBase64
 }

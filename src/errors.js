@@ -1,7 +1,7 @@
 class TypeMismatchError extends Error {}
 class QuotaExceededError extends Error {}
 
-exports = {
+module.exports = {
     TypeMismatchError,
     QuotaExceededError
 }
