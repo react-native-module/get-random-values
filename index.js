@@ -25,7 +25,7 @@ const getRandomValues = (array) => {
   return array
 }
 
-module.exports = {
+exports = {
   getRandomValues,
   default: getRandomValues
 }
