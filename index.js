@@ -9,7 +9,7 @@ export function getRandomValues (array) {
   }
 
   const { QuotaExceededError, TypeMismatchError } = require('./src/errors')
-  const { getRandomBase64, insecureRandomValues } = require('./src/lib')
+  const { getRandomBase64 } = require('./src/lib')
   const base64Decode = require('fast-base64-decode')
 
   if (!(array instanceof Int8Array || array instanceof Uint8Array || array instanceof Int16Array || array instanceof Uint16Array || array instanceof Int32Array || array instanceof Uint32Array || array instanceof Uint8ClampedArray)) {

@@ -1,20 +1,5 @@
 const { NativeModules } = require('react-native')
 
-let warned = false
-export function insecureRandomValues (array) {
-  if (!warned) {
-    console.warn('Using an insecure random number generator, this should only happen when running in a debugger without support for crypto.getRandomValues')
-    warned = true
-  }
-
-  for (let i = 0, r; i < array.length; i++) {
-    if ((i & 0x03) === 0) r = Math.random() * 0x100000000
-    array[i] = (r >>> ((i & 0x03) << 3)) & 0xff
-  }
-
-  return array
-}
-
 /**
  * @param {number} byteLength
  * @returns {string}
