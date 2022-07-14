@@ -1,4 +1,5 @@
 function getRandomValues (array) {
+  // For web
   // If you're running react-native debug mode (Chrome debug)
   // calling request is replaced globalThis.crypto.getRandomValues
   // If you ignore this, you may get error on getRandomBase64

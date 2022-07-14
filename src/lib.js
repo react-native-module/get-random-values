@@ -1,10 +1,18 @@
-const { NativeModules } = require('react-native')
-
 /**
  * @param {number} byteLength
  * @returns {string}
  */
 function getRandomBase64 (byteLength) {
+  // For running on Nodejs - testing, console etc.
+  const isRunningOnReactNative = globalThis.navigator && globalThis.navigator.product && globalThis.navigator.product === 'ReactNative'
+  if (!isRunningOnReactNative) {
+    const crypto = require("crypto")
+    if (crypto.randomBytes) {
+      return crypto.randomBytes(byteLength).toString('base64');
+    }
+  }
+
+  const { NativeModules } = require('react-native')
   if (NativeModules.RNGetRandomValues) {
     return NativeModules.RNGetRandomValues.getRandomBase64(byteLength)
   } else if (NativeModules.ExpoRandom) {
