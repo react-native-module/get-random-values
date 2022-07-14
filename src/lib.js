@@ -4,7 +4,7 @@ const { NativeModules } = require('react-native')
  * @param {number} byteLength
  * @returns {string}
  */
-export function getRandomBase64 (byteLength) {
+function getRandomBase64 (byteLength) {
   if (NativeModules.RNGetRandomValues) {
     return NativeModules.RNGetRandomValues.getRandomBase64(byteLength)
   } else if (NativeModules.ExpoRandom) {
@@ -16,4 +16,8 @@ export function getRandomBase64 (byteLength) {
   } else {
     throw new Error('Native module not found')
   }
+}
+
+exports = {
+  getRandomBase64
 }

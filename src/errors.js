@@ -1,2 +1,7 @@
-export class TypeMismatchError extends Error {}
-export class QuotaExceededError extends Error {}
+class TypeMismatchError extends Error {}
+class QuotaExceededError extends Error {}
+
+exports = {
+    TypeMismatchError,
+    QuotaExceededError
+}
