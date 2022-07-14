@@ -31,7 +31,7 @@ function getRandomBase64 (byteLength) {
     return NativeModules.ExpoRandom.getRandomBase64String(byteLength)
   } else if (global.ExpoModules) {
     // Expo SDK 45+
-    return global.ExpoModules.ExpoRandom.getRandomBase64String(byteLength);
+    return global.ExpoModules.ExpoRandom.getRandomBase64String(byteLength)
   } else {
     throw new Error('Native module not found')
   }
@@ -40,7 +40,7 @@ function getRandomBase64 (byteLength) {
 /**
  * @param {Int8Array|Uint8Array|Int16Array|Uint16Array|Int32Array|Uint32Array|Uint8ClampedArray} array
  */
-function getRandomValues (array) {
+export function getRandomValues (array) {
   if (!(array instanceof Int8Array || array instanceof Uint8Array || array instanceof Int16Array || array instanceof Uint16Array || array instanceof Int32Array || array instanceof Uint32Array || array instanceof Uint8ClampedArray)) {
     throw new TypeMismatchError('Expected an integer array')
   }
@@ -61,12 +61,4 @@ function getRandomValues (array) {
   base64Decode(getRandomBase64(array.byteLength), new Uint8Array(array.buffer, array.byteOffset, array.byteLength))
 
   return array
-}
-
-if (typeof global.crypto !== 'object') {
-  global.crypto = {}
-}
-
-if (typeof global.crypto.getRandomValues !== 'function') {
-  global.crypto.getRandomValues = getRandomValues
 }
