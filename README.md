@@ -1,7 +1,7 @@
 # react-native-module/get-random-values
 
 This module export a function `getRandomValues` only
-with same API `crypto.getRandomValues`
+with same Web API [crypto.getRandomValues](https://developer.mozilla.org/ko/docs/Web/API/Crypto/getRandomValues)
 
 # Why use this module not `react-native-get-random-values`
 
