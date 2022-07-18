@@ -9,6 +9,9 @@ export function getRandomBase64 (byteLength: number): string {
           return Buffer.from(globalThis.crypto.getRandomValues(new Uint8Array(byteLength))).toString('base64')
         }
       } else if (Environment === 'NodeJs') {
+        // in react-native got error directly
+        // Error: Unable to resolve module crypto from ${path}: crypto could not be found within the project or in these directories:
+        // so, set value to package.json "react-native": { "crypto": "react-native "}
         // eslint-disable-next-line @typescript-eslint/no-var-requires
         const nodeCryptoModule = require('crypto')
         return nodeCryptoModule.randomBytes(byteLength).toString('base64')

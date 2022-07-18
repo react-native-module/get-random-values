@@ -50,5 +50,8 @@
     "ios",
     "android",
     "web"
-  ]
+  ],
+  "react-native": {
+    "crypto": "react-native"
+  }
 }
