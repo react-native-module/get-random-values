@@ -5,14 +5,13 @@ export function getRandomBase64 (byteLength: number): string {
   if (Environment !== 'NativeMobile') {
     try {
       if (Environment === 'Browser') {
-        const crypto = globalThis.crypto
-        if (Buffer && crypto.webcrypto && crypto.webcrypto.getRandomValues) {
-          return Buffer.from(crypto.webcrypto.getRandomValues(new Uint8Array(byteLength))).toString('base64')
+        if (Buffer && globalThis.crypto && globalThis.crypto.getRandomValues) {
+          return Buffer.from(globalThis.crypto.getRandomValues(new Uint8Array(byteLength))).toString('base64')
         }
       } else if (Environment === 'NodeJs') {
         // eslint-disable-next-line @typescript-eslint/no-var-requires
-        const crypto = require('crypto')
-        return crypto.randomBytes(byteLength).toString('base64')
+        const nodeCryptoModule = require('crypto')
+        return nodeCryptoModule.randomBytes(byteLength).toString('base64')
       }
     } catch (error) {
       // do nothing
