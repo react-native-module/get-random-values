@@ -11,7 +11,7 @@ export function getRandomBase64 (byteLength: number): string {
         }
       } else if (Environment === 'NodeJs') {
         // eslint-disable-next-line @typescript-eslint/no-var-requires
-        const crypto = require('node:crypto')
+        const crypto = require('crypto')
         return crypto.randomBytes(byteLength).toString('base64')
       }
     } catch (error) {
