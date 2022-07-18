@@ -1,16 +1,11 @@
 {
   "author": "sacru2red <sacru2red@gmail.com>",
   "name": "@react-native-module/get-random-values",
-<<<<<<< HEAD
   "description": "implementation of getRandomValues for React Native",
   "version": "1.8.1",
   "main": "lib/cjs/src/index.js",
   "module": "lib/es/src/index.js",
   "types": "lib/types/index.d.ts",
-=======
-  "version": "1.8.1",
-  "main": "index.js",
->>>>>>> af5d3092a15002e869041bd1388bb17028321275
   "homepage": "https://github.com/react-native-module/get-random-values",
   "repository": {
     "type": "git",
