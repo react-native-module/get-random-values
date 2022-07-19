@@ -21,6 +21,10 @@ export default inputSrc
       // check rollup update to remove /lib/{format}/node_modules
       preserveModules: true,
       preserveEntrySignatures: true,
+      external: [
+        '@react-native-module/utility',
+        'fast-base64-decode'
+      ],
       plugins: [
         typescript(),
         nodeResolve(),
