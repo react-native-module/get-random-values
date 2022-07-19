@@ -6,10 +6,14 @@
   "main": "lib/cjs/src/index.js",
   "module": "lib/es/src/index.js",
   "types": "lib/types/index.d.ts",
-  "homepage": "https://github.com/react-native-module/get-random-values",
+  "react-native": {
+    "crypto": "react-native"
+  },
+  "source": "src/index",
+  "homepage": "https://github.com/react-native-module/get-random-values#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-native-module/get-random-values.git"
+    "url": "git+https://github.com/react-native-module/get-random-values.git"
   },
   "scripts": {
     "lint": "eslint",
@@ -51,7 +55,10 @@
     "android",
     "web"
   ],
-  "react-native": {
-    "crypto": "react-native"
+  "bugs": {
+    "url": "https://github.com/react-native-module/get-random-values/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
