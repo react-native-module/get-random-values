@@ -6,8 +6,12 @@
   "main": "lib/cjs/index.js",
   "module": "lib/es/index.js",
   "types": "lib/types/index.d.ts",
+  "browser": {
+    "react-native": false
+  },
   "react-native": {
-    "crypto": false
+    "crypto": false,
+    "react-native": "react-native"
   },
   "source": "src/index",
   "homepage": "https://github.com/react-native-module/get-random-values#readme",
