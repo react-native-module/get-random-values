@@ -7,7 +7,7 @@
   "module": "lib/es/src/index.js",
   "types": "lib/types/index.d.ts",
   "react-native": {
-    "crypto": "react-native"
+    "crypto": false
   },
   "source": "src/index",
   "homepage": "https://github.com/react-native-module/get-random-values#readme",
