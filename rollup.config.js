@@ -17,10 +17,7 @@ export default inputSrc
         dir: `lib/${format}`,
         format,
       },
-      // @TODO
-      // check rollup update to remove /lib/{format}/node_modules
       preserveModules: true,
-      preserveEntrySignatures: true,
       external: [
         '@react-native-module/utility',
         'fast-base64-decode'
