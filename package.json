@@ -2,22 +2,42 @@
   "author": "sacru2red <sacru2red@gmail.com>",
   "name": "@react-native-module/get-random-values",
   "description": "implementation of getRandomValues for React Native",
-  "version": "1.8.1",
-  "main": "index.js",
+  "version": "1.8.5-0",
+  "main": "lib/cjs/src/index.js",
+  "module": "lib/es/src/index.js",
+  "types": "lib/types/index.d.ts",
   "homepage": "https://github.com/react-native-module/get-random-values",
   "repository": {
     "type": "git",
     "url": "https://github.com/react-native-module/get-random-values.git"
   },
   "scripts": {
-    "standard": "standard",
+    "lint": "eslint",
+    "build": "rimraf ./lib && rollup -c ./rollup.config.js && npm run build:types",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir lib/types",
+    "release": "npm run build && release-it",
     "test": "echo 'tests not set up for React Native yet'"
   },
   "dependencies": {
+    "@react-native-module/utility": "^0.0.3",
     "fast-base64-decode": "^1.0.0"
   },
   "devDependencies": {
-    "standard": "^17.0.0"
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "@types/react-native": "^0.69.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.20.0",
+    "eslint-config-standard-with-typescript": "^22.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-promise": "^6.0.0",
+    "release-it": "^15.1.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.77.0",
+    "typescript": "^4.7.4"
   },
   "license": "MIT",
   "keywords": [
@@ -30,5 +50,8 @@
     "ios",
     "android",
     "web"
-  ]
+  ],
+  "react-native": {
+    "crypto": "react-native"
+  }
 }
