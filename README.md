@@ -10,6 +10,8 @@ but, this module add anything on global scope
 
 ## Installation
 
+This module has peerDependency "react-native"
+
 A typical workflow:
 
 ```
