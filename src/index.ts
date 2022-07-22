@@ -5,7 +5,7 @@ import { getRandomBase64 } from './lib'
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 export type AllowedArrays = Int8Array | Uint8Array | Int16Array | Uint16Array | Int32Array | Uint32Array | Uint8ClampedArray
 // Web API Same
-export function getRandomValues<T extends ArrayBufferView | null> (array: T): T { // s
+function getRandomValues<T extends ArrayBufferView | null> (array: T): T { // s
   // For web
   // If you're running react-native debug mode (Chrome debug)
   // calling request is replaced globalThis.crypto.getRandomValues
@@ -28,3 +28,5 @@ export function getRandomValues<T extends ArrayBufferView | null> (array: T): T 
 
   return array
 }
+
+export default getRandomValues
