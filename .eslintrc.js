@@ -5,22 +5,20 @@ module.exports = {
     },
     "extends": [
       "eslint:recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": "latest",
-    },
-    "plugins": [
-      "@typescript-eslint"
     ],
     "overrides": [
       {
         files: ['*.ts', '*.d.ts'],
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+          "@typescript-eslint"
+        ],
         extends: [
-          "standard-with-typescript"
+          "standard-with-typescript",
+          "plugin:@typescript-eslint/recommended"
         ],
         "parserOptions": {
+          "ecmaVersion": "latest",,
           "project": "./tsconfig.json"
         },
         rules: {
