@@ -21,7 +21,7 @@ function getRandomValues<T extends ArrayBufferView | null> (array: T): T { // s
   }
 
   if (array.byteLength > 65536) {
-    throw new QuotaExceededError('Can only request a maximum of 65536 bytes')
+    throw new QuotaExceededError()
   }
 
   base64Decode(getRandomBase64(array.byteLength), new Uint8Array(array.buffer, array.byteOffset, array.byteLength))
